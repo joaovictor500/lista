@@ -45,3 +45,5 @@ return 0;
 jose
 
 Questao 10 \  A declaração int const *x = 3 resulta em um comportamento indefinido e warning de conversão de tipos. Incrementar *x em printf gera outro comportamento indefinido. O resultado do programa é imprevisível e precisa ser corrigido para funcionar corretamente.
+
+Questao 11 \ Os endereços de memória para x+1, x+2 e x+3 são calculados com base no tamanho dos diferentes tipos de dado: char, int, float e double. O programa em C pode testar essas suposições.
