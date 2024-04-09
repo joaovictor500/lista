@@ -1,10 +1,59 @@
 Questao 01  A expressão "p == &i" é verdadeira (1), enquanto "*p - *q" é igual a -2. Já "**&p" é igual a 3. Por fim, a expressão "3 - *p/(*q) + 7" resulta em 10.
 p == &i;: Verdadeiro (1). *p - *q;: -2. **&p;: 3. 3 - *p/(*q) + 7;: 10.
 
-Quetao 02 \
+Quetao 02 \ main(){
+  int i=5, *p;
+  p = &i;
+  printf("%p %p %d %d %d %d\n", p, p+1, p+2, *&p, 3*p, *&p+4);
+}
+p = onde o ponteiro armazena dados. de acordo com a questão (4094) 
+p+1 = local de armazenamento do ponteiro com um acréscimo de
+(de acordo com a questão) 2 bytes. (4096) supostamente
+*p+2 = Elemento armazenado no ponteiro (i [i=5]) + 2, resultando em 7.
+**&p = uma forma diferente de expressar o valor apontado por *p (5)
+3**p = 3 multiplicando o elemento de p (15)
+**&p+4 = o elemento de p somado a 4 (9)
 
 Questao 03 \ 
 A expressão *q = &j é ilegal, pois tenta atribuir o endereço de j a um inteiro (*q). A expressão p = &&i é legal, pois obtém o endereço de i e atribui a p. A expressão i = (*&j) é ilegal, pois tenta desreferenciar o endereço de j. A expressão i = *j é legal, pois desreferencia o endereço de j e atribui a i. A expressão i = &&j é legal, pois obtém o valor de j e atribui a i. A expressão q = *p é ilegal, pois tenta atribuir um valor inteiro a um ponteiro. A expressão i = (*p)++ + *q é legal, pois incrementa o valor apontado por p e adiciona ao valor apontado por q, atribuindo a i.
+
+Questao 04 \ A)
+Esse código coloca o ponteiro na posição de memória do int "valor" para poder modificar o número de "valor" realizando operações apenas com o ponteiro
+B) a mesma coisa da letra "A)", porém agora em ponto flutuante
+C)
+p3 = &nome[0];
+Essa função associa a posição de memoria do primeiro elemento da string "nome" com o ponteiro "p3" 
+
+A segunda iguala a variável "aux" com o primeiro elemento de "p3" fazendo que o "printf" mostre a primeira letra da string "nome"
+D)
+Iguala "p3" com o quinto elemento de "nome", depois iguala o primeiro elemento de p3 (Quinto elemento de "nome") a "Aux"
+E)
+iguala a posição de memória de "p3" com a posição de memória de "nome" e depois imprime o primeiro elemento de p3.
+(Que é o primeiro elemento de "nome")
+F)
+Iguala a posição de memória inicial de "p3" com o quinto elemento de "p3" 
+(Que já estava associado ao String "nome")
+Quando o novo primeiro elemento do ponteiro é mostrado no printf, o resultado é o antigo quinto elemento do ponteiro
+G)
+Decrementa uma posição de memória do ponteiro "p3" fazendo o novo primeiro elemento ser o quarto elemento do String "nome"
+H)
+(Praticamente a mesma coisa)
+.cria valores para o vetor 
+.associa "p4" com a posição de memória do primeiro elemento do vetor
+.iguala "idade" com o primeiro elemento de "p4"
+i)
+.Posição de memória inicial de "p5" = segunda posição de memória de "p4"
+."idade" = primeiro elemento de "p5"
+J)
+.Posição de memória inicial de "p4" = segunda posição de memória de "p5"
+."idade" = primeiro elemento de "p4"
+L) 
+.{posição de memória inicial do "P4"} = {posição de memória inicial de "P4" - 2}
+(Considerando que depois de uma série de operações, o elemento inicial do P4 estava apontando para o terceiro elemento do vetor, essa função da questão L faz com que P4 volte a apontar para o elemento inicial do vetor)
+M)
+Iguala a posição de memória inicial de "p5" com o {terceiro elemento do vetor - 1} fazendo com que "p5" aponte para o segundo elemento do vetor
+N)
+Incrementa uma posição de memória ao ponteiro "p5" fazendo ele apontar para o terceiro elemento de "vetor"
 
 Questao 05 \ contador/valor/valor/endereco/endereco i= vet[0] 1 1.1 *(f x 0) = 1.1 &vet[0] = 6644B60 (f + 0)=66F44B60 i= 1 vet[1] 2.2 *(f + 1) = 2.2 Svet[1] = 66F44B64 (f+
 
